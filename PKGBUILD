@@ -3,19 +3,19 @@
 # NOTE: Please fill out the license field for your package! If it is unknown,
 # then please put 'unknown'.
 #Maintainer: Abouzakaria <zkariakov@gmail.com>
-pkgname=elokab-files-manager
+pkgname=quefm
 pkgver=0.2.1
 pkgrel=1
 epoch=
 pkgdesc="A lightweight file manager for Linux desktops built in Qt."
-arch=( 'x86_64')
-url=""
+arch=('x86_64')
+url="https://github.com/git-fal7/$pkgname"
 license=('GPL')
 groups=()
-depends=('qt5-svg' 'file' 'udisks2')
+depends=('qt5-svg' 'file' 'udisks2' 'imagemagick' 'ffmpeg')
 makedepends=()
 checkdepends=()
-optdepends=('imagemagick'  'ffmpeg')
+optdepends=()
 provides=()
 conflicts=()
 replaces=()
@@ -24,8 +24,7 @@ options=()
 install=
 changelog=
 #source=("$pkgname-$pkgver.tar.gz")
-source=(https://github.com/zakariakov/elokab-files-manager/archive/v0.2.tar.gz)
-noextract=()
+source=("$pkgname::git+$url.git")
 md5sums=("SKIP")
 validpgpkeys=()
 
