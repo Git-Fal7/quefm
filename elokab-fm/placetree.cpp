@@ -289,19 +289,21 @@ mListMountedItems.clear();
  **************************************************************************************/
 void PlaceTree::addDiskItem(Device *D)
 {
-    Messages::debugMe(0,__LINE__,"PlaceTree",__FUNCTION__,D->devPath());
-    QTreeWidgetItem *item=new QTreeWidgetItem();
-    item->setText(0,D->label());
-    item->setData(0,Qt::ToolTipRole,D->mountPath());
-    item->setData(0,Qt::UserRole,D->devPath());
-   // item->setData(1,Qt::UserRole,D->mountPath());
+     Messages::debugMe(0,__LINE__,"PlaceTree",__FUNCTION__,D->devPath());
 
-    item->setIcon(0,QIcon::fromTheme(D->iconName(),QIcon("drive-harddisk")));
+     if(D->mountPath() != "/boot") {
+          QTreeWidgetItem *item=new QTreeWidgetItem();
+          item->setText(0,D->label());
+          item->setData(0,Qt::ToolTipRole,D->mountPath());
+          item->setData(0,Qt::UserRole,D->devPath());
+            // item->setData(1,Qt::UserRole,D->mountPath());
 
-     mDivecesItem->addChild(item);
+          item->setIcon(0,QIcon::fromTheme(D->iconName(),QIcon("drive-harddisk")));
 
-     mHashItems[item->data(0,Qt::ToolTipRole).toString()]=item;
+          mDivecesItem->addChild(item);
 
+          mHashItems[item->data(0,Qt::ToolTipRole).toString()]=item;
+     }
 }
 
 /**************************************************************************************
