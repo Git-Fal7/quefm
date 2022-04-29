@@ -34,7 +34,7 @@ prepare() {
 }
 
 build() {
-	cd "$srcdir/$pkgname-$pkgver"
+	cd "$srcdir/$pkgname"
 	qmake "elokab-files-manager.pro" \
     PREFIX=/usr \
     QMAKE_CFLAGS_RELEASE="${CFLAGS}"\
@@ -43,12 +43,12 @@ build() {
 }
 
 check() {
-	cd "$pkgname-$pkgver"
+	cd "$pkgname"
 	make -k check
 }
 
 package() {
-	cd "$pkgname-$pkgver"
+	cd "$pkgname"
 	make DESTDIR="$pkgdir/" install
 
     
