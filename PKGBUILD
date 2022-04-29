@@ -29,7 +29,7 @@ md5sums=("SKIP")
 validpgpkeys=()
 
 prepare() {
-	cd "$pkgname-$pkgver"
+	cd "$pkgname"
 	
 }
 
