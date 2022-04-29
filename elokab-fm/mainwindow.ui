@@ -184,6 +184,9 @@
    <property name="contextMenuPolicy">
     <enum>Qt::CustomContextMenu</enum>
    </property>
+   <property name="movable">
+    <bool>false</bool>
+   </property>
    <property name="iconSize">
     <size>
      <width>22</width>
