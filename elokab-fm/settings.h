@@ -130,7 +130,7 @@ class Settings : public QSettings
           void setFolderNavigation(const bool &arg){   setValue("FolderNavigation",arg);emit showFolderNavigationChanged(arg);}
 
           /*!< لوحة المعلومات */
-          bool showInformation(){return value("ShowInformation",true).toBool();}
+          bool showInformation(){return value("ShowInformation",false).toBool();}
           void setShowInformation(const bool &arg){setValue("ShowInformation",arg);emit showInformationChanged(arg);}
 
           /*!< عرض اخفاء لوحة الادوات */
@@ -142,7 +142,7 @@ class Settings : public QSettings
           void setShowTerminalTool(const bool &arg){  setValue("ShowTerminalTool",arg);emit showTerminalToolChanged(arg);}
 
           /*!< عرض اخفاء القائمة الرئيسية */
-          bool showMenuBar(){return value("ShowMenuBar",true).toBool();}
+          bool showMenuBar(){return value("ShowMenuBar",false).toBool();}
           void setShowMenuBar(const bool &arg){   setValue("ShowMenuBar",arg);emit showMenuBarChanged(arg);}
 
           /*!< عرض اخفاء المصغرات */
